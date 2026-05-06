@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kedai Digital | Makan & Solusi IT</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">Kedai <span>Digital</span></div>
+            <ul class="nav-links">
+                <li><a href="#" onclick="showPage('home')">Home</a></li>
+                <li><a href="#" onclick="showPage('about')">Tentang Kami</a></li>
+                <li><a href="#" onclick="showPage('menu')">Menu</a></li>
+                <li><a href="#" class="login-nav" onclick="showPage('login')">Login</a></li>
+            </ul>
+            <div class="cart-btn" onclick="toggleCart()">
+                <i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="page active">
+        <div class="hero">
+            <h1>Kedai Digital</h1>
+            <p>Tempat nongkrongnya para tech-enthusiast. Perut kenyang, urusan digital lancar.</p>
+            <button class="btn-main" onclick="showPage('menu')">Lihat Menu</button>
+        </div>
+    </section>
+
+    <section id="about" class="page">
+        <div class="container">
+            <h2>Tentang Kami</h2>
+            <div class="about-content">
+                <p><strong>Kedai Digital</strong> adalah inovasi usaha masa kini yang menggabungkan asupan nutrisi lezat dengan kebutuhan teknologi. Kami melayani pemesanan makanan/minuman harian sekaligus konsultasi digital. Berdiri untuk mendukung kreativitas Anda setiap hari.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="page">
+        <div class="container">
+            <h2 class="section-title">Menu Makanan & Minuman</h2>
+            <div class="product-grid" id="menu-container">
+                </div>
+        </div>
+    </section>
+
+    <section id="login" class="page">
+        <div class="login-card">
+            <h2>Login Pelanggan</h2>
+            <p>Masuk untuk akses fitur premium</p>
+            <form onsubmit="return false">
+                <input type="text" placeholder="Username" required>
+                <input type="password" placeholder="Password" required>
+                <button class="btn-main" style="width: 100%;">Login Sekarang</button>
+            </form>
+        </div>
+    </section>
+
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="toggleCart()">&times;</span>
+            <h2>Pesanan Anda</h2>
+            <div id="cart-items"></div>
+            <div class="cart-footer">
+                <h3>Total: Rp <span id="total-price">0</span></h3>
+                <button class="btn-wa" onclick="checkoutWA()">
+                    <i class="fab fa-whatsapp"></i> Pesan via WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Kedai Digital - All Rights Reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
